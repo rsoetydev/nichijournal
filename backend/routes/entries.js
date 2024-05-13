@@ -2,7 +2,9 @@ const express = require('express')
 const {
     createEntry,
     getEntry,
-    getEntries
+    getEntries,
+    deleteEntry,
+    updateEntry
 } = require('../controllers/entryController')
 
 const router = express.Router()
@@ -17,14 +19,12 @@ router.get('/:id', getEntry)
 router.post('/', createEntry)
 
 // DELETE a journal entry
-router.delete('/:id', (req, res) => {
-    res.json({mssg: 'delete'})
-})
+router.delete('/:id', deleteEntry)
+
 
 // UPDATE a journal entry
-router.patch('/:id', (req, res) => {
-    res.json({mssg: 'patch'})
-})
+router.patch('/:id', updateEntry)
+
 
 
 
