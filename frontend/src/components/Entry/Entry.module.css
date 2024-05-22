@@ -1,0 +1,108 @@
+@import '../../index.css';
+
+
+
+.row{
+    display: flex;
+
+}
+
+/* card section */
+
+.card{
+    background-color: #fff;
+    color: var(--text);
+    border-radius: 15px;
+    padding: 20px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    box-shadow: 8px 8px 8px lightgray;
+}
+
+.card p{
+    padding: 0;
+    margin: 0;
+}
+
+.card .content{
+    flex: 1;
+    display: flex;
+}
+
+.card .content .entryText{
+    flex: 1;
+}
+
+.card .content .delete{
+    width: 10px;
+    cursor: pointer;
+}
+
+.card .options{
+    align-self: end;
+    display: flex;
+    gap: 30px;
+    color: var(--light-text);
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.card .options .langOptions {
+    display: flex;
+    gap: 10px;
+}
+
+.card .options .shareDiv {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* date section */
+
+.date{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0px 0px 10px 10px;
+    color: var(--light-text);
+}
+
+.date .day{
+    font-weight: 700;
+    font-size: 46px;
+    text-align: end;
+    line-height: 110%;
+}
+
+.date .month{
+    display: flex;
+    flex-direction: row;
+    font-size: 36px;
+    text-align: end;
+    line-height: 110%;
+    justify-content: end;
+}
+
+.date .month .gatsu{
+    font-weight: 700;
+    margin-right: -2px;
+}
+
+.date .year{
+    font-size: 36px;
+    text-align: end;
+    line-height: 110%;
+}
+
+

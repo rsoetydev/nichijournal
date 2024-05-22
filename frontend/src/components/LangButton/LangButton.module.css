@@ -1,0 +1,16 @@
+@import '../../index.css';
+
+.button {
+    background-color: transparent;
+    border-style: solid;
+    font-size: 16px;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: var(--light-text);
+    border-radius: 10px;
+    color: var(--light-text);
+    height: 30px;
+
+
+
+}
