@@ -24,11 +24,13 @@
 .card p{
     padding: 0;
     margin: 0;
+    word-break: break-word;
 }
 
 .card .content{
     flex: 1;
     display: flex;
+    max-width: 100%;
 }
 
 .card .content .entryText{
@@ -36,8 +38,11 @@
 }
 
 .card .content .delete{
-    width: 10px;
+    width: 20px;
     cursor: pointer;
+    align-self: flex-start;
+    margin-right: -15px;
+    padding-left: 15px;
 }
 
 .card .options{
@@ -47,6 +52,7 @@
     color: var(--light-text);
     font-size: 18px;
     margin-top: 15px;
+    user-select: none;
 }
 
 .card .options .langOptions {
@@ -56,8 +62,13 @@
 
 .card .options .shareDiv {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
+}
+
+.card .options .shareDiv .shareIcon {
+    width: 30px;
+    margin-top: -3px;
 }
 
 
@@ -76,6 +87,7 @@
     justify-content: end;
     padding: 0px 0px 10px 10px;
     color: var(--light-text);
+    user-select: none;
 }
 
 .date .day{

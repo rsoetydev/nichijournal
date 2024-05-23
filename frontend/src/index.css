@@ -14,8 +14,6 @@
 body {
   margin: 0;
   font-family: "Poppins";
-  min-height: 100%;
-  height: 100%;
   background-color: var(--primary);
 }
 
@@ -31,16 +29,17 @@ body {
 /* navbar */
 
 header .header {
-  padding: 0px 50px;
+  padding:  0px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 65px;
 }
 
 
 .header .logo {
-  width: 400px;
+  height: 40px
 }
 
 
@@ -82,6 +81,20 @@ header .header {
   background-color: var(--tertiary);
   border-radius: 15px 15px 0px 0px;
   min-width: 800px;
+  height: calc(100vh - 105px);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 30px;
+  background-color: var(--primary);
 }
 
 
@@ -91,4 +104,14 @@ header .header {
   display: flex;
   flex: 1;
   flex-direction: column;
+  margin-right: -20px;
+}
+
+.journal .entries{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  padding: 20px;
 }

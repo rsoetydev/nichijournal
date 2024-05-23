@@ -5,7 +5,27 @@ const Journal = () => {
     return(
       <div className="journal">
           <CalendarNav />
-          <Entry />
+          <div className="entries">
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+            <Entry />
+          </div>
       </div>
     )
   }

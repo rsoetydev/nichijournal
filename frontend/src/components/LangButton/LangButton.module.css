@@ -10,7 +10,14 @@
     border-radius: 10px;
     color: var(--light-text);
     height: 30px;
+}
 
+.button:hover{
+    color: var(--white);
+    background-color: var(--light-text);
+}
 
-
+.button:active{
+    color: var(--white);
+    background-color: var(--light-text);
 }
