@@ -1,0 +1,24 @@
+@import '../../index.css';
+
+
+.kanjiBlock {
+    display: flex;
+    gap: 20px;
+}
+
+.kanjiBlock p{
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.kanji {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

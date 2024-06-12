@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/NJ_Logo.svg'
 import UserIcon from '../assets/images/user.svg'
-import NavButton from './NavButton/NavButton'
+import DropdownNavButton from './DropdownNavButton/DropdownNavButton'
 
 const Header = () => {
 
@@ -12,7 +12,14 @@ const Header = () => {
                     <img src={logo} alt="NichiJournal" className="logo" />
                 </Link>
                 <div className="nav">
-                    <NavButton icon={UserIcon} alt="User"/>
+                    <DropdownNavButton 
+                        items={[
+                            ['Login', '/login'],
+                            ['Signup', '/signup'],
+                            ['Account', '/account'],
+                            ['Logout', '/logout'],
+                        ]}
+                        icon={UserIcon} alt='User'/>
                 </div>
             </div>
         </header>

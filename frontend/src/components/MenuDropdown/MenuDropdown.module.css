@@ -1,0 +1,37 @@
+@import '../../index.css';
+
+.dropdownContainer {
+    position: absolute;
+    visibility: hidden;
+    background-color: var(--secondary);
+    border-radius: 0.5rem 0 0.5rem 0.54rem;
+    color: var(--white);
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.dropOpen {
+    visibility: visible;
+}
+
+.dropdownContainer ul{
+    list-style-type: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdownContainer li{
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.dropdownContainer li:hover{
+    color: var(--primary)
+}
+
+.dropdownContainer .lastItem {
+    margin: 0;
+}

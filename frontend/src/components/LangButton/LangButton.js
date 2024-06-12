@@ -10,7 +10,7 @@ const LangButton = (props) => {
     }
 
     return(
-        <button className={styles.button}>
+        <button onClick={props.onClick} className={`${styles.button} ${props.toggle ? styles.langActive : null}`}>
             <span>{lang}</span>
         </button>
     )

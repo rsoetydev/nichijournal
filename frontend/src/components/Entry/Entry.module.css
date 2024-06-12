@@ -60,6 +60,29 @@
     gap: 10px;
 }
 
+
+.card .options .langOptions .langButton {
+    background-color: transparent;
+    border-style: solid;
+    font-size: 16px;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: var(--light-text);
+    border-radius: 10px;
+    color: var(--light-text);
+    height: 30px;
+}
+
+.card .options .langOptions .langButton:hover{
+    color: var(--white);
+    background-color: var(--light-text);
+}
+
+.card .options .langOptions .langButton:active{
+    color: var(--white);
+    background-color: var(--light-text);
+}
+
 .card .options .shareDiv {
     display: flex;
     gap: 5px;
@@ -70,6 +93,8 @@
     width: 30px;
     margin-top: -3px;
 }
+
+
 
 
 
@@ -118,3 +143,6 @@
 }
 
 
+.hidden {
+    display: none;
+}

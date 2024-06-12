@@ -28,10 +28,10 @@ const getEntry = async (req, res) => {
 
 // create an entry
 const createEntry = async (req, res) => {
-    const {body, date, image} = req.body
+    const {en_text, jp_text, date, image} = req.body
 
     try {
-        const entry = await Entry.create({ body, date, image })
+        const entry = await Entry.create({en_text, jp_text, date, image})
         res.status(200).json(entry)
     } catch (error) {
         res.status(400).json({ error: error.message })

@@ -1,0 +1,143 @@
+@import '../../index.css';
+
+
+
+.row{
+    display: flex;
+
+}
+
+/* card section */
+
+.card{
+    background-color: #fff;
+    color: var(--text);
+    border-radius: 15px;
+    padding: 20px 30px;
+    gap: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    box-shadow: 8px 8px 8px lightgray;
+}
+
+.card p{
+    padding: 0;
+    margin: 0;
+    word-break: break-word;
+}
+
+.card .content{
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+}
+
+.card .content .entryText{
+    flex: 1;
+}
+
+.card .content .delete{
+    width: 20px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-right: -15px;
+    padding-left: 15px;
+}
+
+.card .cardInfo{
+    display: flex;
+    gap: 30px;
+    color: var(--light-text);
+    font-size: 18px;
+    margin-top: 15px;
+    user-select: none;
+}
+
+
+.card .cardInfo .user{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex: 1;
+}
+
+.card .cardInfo .user .userPic {
+    width: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card .cardInfo .user .userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.userInfo .userName {
+    font-weight: 700;
+    cursor: pointer;
+}
+.card .cardInfo .images {
+    align-self: center;
+}
+
+.card .cardInfo .options {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.card .cardInfo .options .langOptions {
+    display: flex;
+    justify-self: end;
+    gap: 10px;
+}
+
+.card .cardInfo .options .reportDiv {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* date section */
+
+.date{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0px 0px 10px 10px;
+    color: var(--light-text);
+    user-select: none;
+}
+
+.date .day{
+    font-weight: 700;
+    font-size: 46px;
+    text-align: end;
+    line-height: 110%;
+}
+
+.date .month{
+    display: flex;
+    flex-direction: row;
+    font-size: 36px;
+    text-align: end;
+    line-height: 110%;
+    justify-content: end;
+}
+
+.date .month .gatsu{
+    font-weight: 700;
+    margin-right: -2px;
+}
+
+.date .year{
+    font-size: 36px;
+    text-align: end;
+    line-height: 110%;
+}
+
+

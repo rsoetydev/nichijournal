@@ -3,7 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const entrySchema = new Schema({
-    body: {
+    en_text: {
+        type: String,
+        required: true
+    },
+    jp_text: {
         type: String,
         required: true
     },

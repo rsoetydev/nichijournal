@@ -17,7 +17,7 @@
     background-color: var(--light-text);
 }
 
-.button:active{
+.langActive{
     color: var(--white);
     background-color: var(--light-text);
 }

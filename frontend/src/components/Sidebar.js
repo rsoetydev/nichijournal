@@ -8,9 +8,15 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar-nav">
-            <NavButton icon={PencilIcon} alt="Create Entry" />
-            <NavButton icon={JournalIcon} alt="View Journal" />
-            <NavButton icon={UsersIcon} alt="Community" />
+            <Link to="/entry">
+                <NavButton icon={PencilIcon} alt="Create Entry" />
+            </Link>
+            <Link to="/journal">
+                <NavButton icon={JournalIcon} alt="View Journal" />
+            </Link>
+            <Link to="/community">
+                <NavButton icon={UsersIcon} alt="Community" />
+            </Link>
         </div>
     )
   

@@ -1,11 +1,5 @@
 @import '../../index.css';
 
-
-.calendarNavRow {
-    display: flex;
-    padding: 0px 20px;
-}
-
 .date {
     flex: 1;
     font-size: 24px;
@@ -22,7 +16,6 @@
 .calendarNav {
     display: flex;
     justify-content: end;
-    margin-bottom: 15px;
     gap: 5px;
 
 }
@@ -38,21 +31,31 @@
     border-radius: 15px;
     background-color: var(--white);
     cursor: pointer;
-    margin-top:-5px;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--light-text)
 }
+
+
 
 .calendarNav .calendarButton:hover {
     background-color: var(--tertiary);
 }
 
+.calendarNav .buttonOpen {
+    background-color: var(--tertiary);
+}
+
+
 .calendarNav .calendarButton .calendarIcon {
     width: 30px;
 }
 
-.calendarNav .calendarButton .month {
+.calendarNav .calendarButton .kanji {
     font-size: 28px;
-    font-weight: 900;
-    color: var(--light-text)
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: -3px;
 }
 
 .calendarNav .arrow {
@@ -61,4 +64,25 @@
     cursor: pointer;
     background-color: transparent;
 
+}
+
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendarNav .calendarDrop {
+    position: absolute;
+    padding: 1rem;
+    margin-top: 2.5rem;
+    width: 150%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    visibility: hidden;
+}
+
+.calendarNav .open {
+    visibility: visible;
 }
