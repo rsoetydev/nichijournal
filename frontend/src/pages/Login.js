@@ -1,15 +1,19 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useLogin } from '../hooks/useLogin'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
+  const { login, error, isLoading } = useLogin()
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(email, password)
+    await login(username, password)
+    
+    navigate('/journal')
   }
 
   return (
@@ -32,7 +36,8 @@ const Login = () => {
               value={password}
           />
 
-          <button>Login</button>
+          <button disabled={isLoading}>Login</button>
+          {error && <div className="error">{error}</div>}
 
           <span>Don't have an account?<br /><Link to="/signup">Signup for free!</Link></span>
   </form>

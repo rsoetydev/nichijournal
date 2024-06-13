@@ -2,11 +2,13 @@ import Entry from '../components/Entry/Entry'
 import CalendarNav from '../components/CalendarNav/CalendarNav'
 import { useEffect, useState } from 'react'
 import { DateTime } from 'luxon'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
 const Journal = () => {
   const [entries, setEntries] = useState(null)
   const [date, setDate] = useState(DateTime.now())
+  const { user } = useAuthContext()
 
   const handleStateChange = (newDate) => {
     setDate(newDate)
@@ -14,7 +16,11 @@ const Journal = () => {
 
   useEffect(() => {
     const fetchEntries = async () => {
-      const response = await fetch('/api/journal')
+      const response = await fetch('/api/journal', {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
       const json = await response.json()
 
       if (response.ok) {
@@ -23,8 +29,10 @@ const Journal = () => {
       }
     }
 
-    fetchEntries()
-  }, [])
+    if(user) {
+      fetchEntries()
+    }
+  }, [user])
 
     return(
       <div className="journal">

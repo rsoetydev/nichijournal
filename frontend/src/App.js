@@ -8,6 +8,7 @@ import Community from './pages/Community'
 import CreateEntry from './pages/CreateEntry'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import Logout from './pages/Logout'
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -47,6 +48,10 @@ function App() {
                 <Route
                   path="/signup"
                   element={<Signup />}
+                />
+                <Route
+                  path="/logout"
+                  element={<Logout />}
                 />
 
               </Routes>

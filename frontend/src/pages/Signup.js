@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSignup } from '../hooks/useSignup'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
+  const {signup, error, isLoading} = useSignup()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(email, password)
+    await signup(username, email, password)
   }
 
   return (
@@ -38,7 +40,8 @@ const Signup = () => {
             value={password}
         />
 
-        <button>Sign Up</button>
+        <button disabled={isLoading}>Sign Up</button>
+        {error && <div className="error">{error}</div>}
         <span>Already have an account?<br /><Link to="/login">Login here!</Link></span>
     </form>
 </div>
