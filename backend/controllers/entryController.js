@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 
 // get all entries
 const getEntries = async (req, res) => {
-    const entries = await Entry.find({}).sort({ createdAt: -1 })
+    const user_id = req.user._id
+    console.log("in entries")
+
+    const entries = await Entry.find({ user_id }).sort({ createdAt: -1 })
 
     res.status(200).json(entries)
 }
@@ -30,8 +33,21 @@ const getEntry = async (req, res) => {
 const createEntry = async (req, res) => {
     const {en_text, jp_text, date, image} = req.body
 
+    let emptyFields = []
+
+    if(!en_text) {
+        emptyFields.push('english text')
+    }
+    if(!jp_text) {
+        emptyFields.push('japanese text')
+    }
+    if(emptyFields.length > 0 ) {
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
+
     try {
-        const entry = await Entry.create({en_text, jp_text, date, image})
+        const user_id = req.user._id
+        const entry = await Entry.create({en_text, jp_text, date, image, user_id})
         res.status(200).json(entry)
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -60,6 +76,18 @@ const deleteEntry = async (req, res) => {
 // update an entry
 const updateEntry = async (req, res) => {
     const { id } = req.params
+    const { en_text, jp_text} = req.body
+    let emptyFields = []
+
+    if(!en_text) {
+        emptyFields.push('english text')
+    }
+    if(!jp_text) {
+        emptyFields.push('japanese text')
+    }
+    if(emptyFields.length > 0 ) {
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
 
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No entry found'})

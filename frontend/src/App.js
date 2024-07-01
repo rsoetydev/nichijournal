@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 
 // pages & components
@@ -14,8 +14,10 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import PopoutBar from './components/PopoutBar';
 import Footer from './components/Footer'
+import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
+  const { user } = useAuthContext()
   return (
     <div className="App">
       <BrowserRouter>
@@ -43,15 +45,15 @@ function App() {
                 />
                 <Route
                   path="/login"
-                  element={<Login />}
+                  element={!user ? <Login /> : <Navigate to="/" />}
                 />
                 <Route
                   path="/signup"
-                  element={<Signup />}
+                  element={!user ? <Signup /> : <Navigate to="/" />}
                 />
                 <Route
                   path="/logout"
-                  element={<Logout />}
+                  element={user ? <Logout /> : <Navigate to="/" />}
                 />
 
               </Routes>

@@ -33,6 +33,32 @@
     max-width: 100%;
 }
 
+.card .contentEdit{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card .contentEdit label{
+    display:flex;
+    flex-direction: column;
+    color: var(--light-text);
+}
+  
+.card .contentEdit textarea{
+    min-height: 10rem;
+    border-radius: 1rem;
+    border-style: solid;
+    resize: none;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    color:var(--light-text)
+}
+  
+.card .contentEdit textarea:focus{
+    outline-color: var(--primary);
+}
+
 .card .content .entryText{
     flex: 1;
 }
@@ -46,9 +72,10 @@
 }
 
 .card .options{
+    
     align-self: end;
     display: flex;
-    gap: 30px;
+    gap: 1rem;
     color: var(--light-text);
     font-size: 18px;
     margin-top: 15px;
@@ -83,16 +110,40 @@
     background-color: var(--light-text);
 }
 
-.card .options .shareDiv {
+.card .options .cardOptions {
     display: flex;
-    gap: 5px;
+    gap: 1rem;
+    height: 30px;
+    flex: 1;
+    width: 4rem;
+}
+
+.card .options .cardOptions .editIcon {
+    cursor: pointer;
+    width: 2rem;
+}
+
+.card .options .cardOptions .shareIcon {
+    width: 2rem;
+    margin-top: -3px;
     cursor: pointer;
 }
 
-.card .options .shareDiv .shareIcon {
-    width: 30px;
-    margin-top: -3px;
-}
+.card .editOptions button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border-style: none;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+  }
+  
+  .card .editOptions button:hover {
+    background-color: var(--light-text);
+  }
 
 
 
@@ -114,6 +165,12 @@
     color: var(--light-text);
     user-select: none;
 }
+
+/*
+.hideDate{
+    visibility: hidden;
+}
+*/
 
 .date .day{
     font-weight: 700;
